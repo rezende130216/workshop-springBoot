@@ -1,9 +1,7 @@
 package com.microservice.curso.services;
 
 import com.microservice.curso.entities.Order;
-import com.microservice.curso.entities.User;
 import com.microservice.curso.repository.OrderRepository;
-import com.microservice.curso.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
