@@ -1,5 +1,7 @@
 package com.microservice.curso.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serial;
@@ -8,7 +10,7 @@ import java.time.Instant;
 import java.util.Objects;
 
 @Entity
-@Table(name = "table_order")
+@Table(name = "tb_order")
 public class Order implements Serializable {
 
     @Serial
@@ -17,6 +19,7 @@ public class Order implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
     private Instant moment;
 
     @ManyToOne
