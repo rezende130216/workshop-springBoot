@@ -5,8 +5,6 @@ import jakarta.persistence.*;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -24,10 +22,13 @@ public class User implements Serializable {
     private String phone;
     private String password;
 
+<<<<<<< HEAD
     @JsonIgnore
     @OneToMany(mappedBy = "client")
     private final List<Order> orders = new ArrayList<>();
 
+=======
+>>>>>>> parent of 68ef9f6 (Add - Entidade pedido, datas com instant e padrão ISO 8601 PT-01)
     public User() {
     }
 
@@ -41,10 +42,6 @@ public class User implements Serializable {
 
     public Long getId() {
         return id;
-    }
-
-    public List<Order> getOrders() {
-        return orders;
     }
 
     public void setId(Long id) {
