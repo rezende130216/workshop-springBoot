@@ -3,6 +3,7 @@ package com.microservice.curso.entities;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.microservice.curso.entities.enums.OrderStatus;
 import jakarta.persistence.*;
+import org.aspectj.weaver.ast.Or;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -90,6 +91,14 @@ public class Order implements Serializable {
 
     public void setPayment(Payment payment) {
         this.payment = payment;
+    }
+
+    public Double getTotal(){
+        double sum = 0.0;
+        for (OrderItem x: items){
+            sum += x.getSubTotal();
+        }
+        return sum;
     }
 
     @Override
